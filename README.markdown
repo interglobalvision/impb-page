@@ -1,8 +1,5 @@
-globie-static-starter-pack
+impb page
 ---
-v 1.0.0
-
-Starting point for single pages
 
 ```
 git clone --recursive --depth 1 git@github.com:interglobalvision/interglobalvision-single-page-boil.git some-project
