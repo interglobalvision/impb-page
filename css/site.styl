@@ -27,15 +27,20 @@ normalize()
 
 // VARIABLES
 
-$color-black = rgb(0, 0, 0)
+$color-black = rgb(45, 45, 45)
 $color-white = rgb(255, 255, 255)
+$color-grey-light = rgb(238, 238, 238)
+$color-grey-mid = rgb(218, 218, 218)
+$color-grey-dark = rgb(180, 180, 180)
+$color-yellow-light = rgb(244, 214, 20)
+$color-yellow-dark = rgb(225, 197, 36)
 
 // ******************************************************
 
 // BASIC
 
 html
-  background-color: $color-white
+  background-color: $color-grey-light
   color: $color-black
 
 img
@@ -48,6 +53,63 @@ img
 .desktop-only
   display: none !important
 
+.fill-grey-dark
+  fill: $color-grey-dark
+  
+.fill-grey-mid
+  fill: $color-grey-mid
+  
+.fill-grey-light
+  fill: $color-grey-light
+  
+.fill-yellow-dark
+  fill: $color-yellow-dark
+  
+.fill-yellow-light
+  fill: $color-yellow-light
+  
+.fill-black
+  fill: $color-black
+
+// ******************************************************
+
+// HEADER 
+
+#header 
+  width: 100%
+  font-size: 0
+  // fixes a phantom margin issue
+  .container
+    background-image: url('../img/dist/the_matrix.png') 
+    background-size: 70%
+    background-position: center
+    background-repeat: no-repeat
+  
+#impb-ship-large
+  margin-bottom: -1px
+  // fixes a phantom margin issue
+  
+// ******************************************************
+
+// MAIN 
+
+#main-content 
+  width: 100%
+  
+.banner-yellow 
+  background-color: $color-yellow-light
+  
+// ******************************************************
+
+// FOOTER 
+
+#footer 
+  width: 100%
+  background-color: $color-grey-dark
+  color: $color-grey-mid
+  img 
+    max-height: 50px
+  
 // ******************************************************
 
 // MEDIA QUERIES
@@ -61,19 +123,16 @@ $margin-basic = ($gutter * 2)
 $margin-mid = ($gutter * 3.5)
 $margin-large = ($gutter * 5)
     
-$font-size-basic = 12px
-$font-size-extra = 36px
-$font-size-large = 28px
-$font-size-mid = 21px
-$font-size-small = 16px
-$font-size-tiny = 12px
-$font-size-micro = 10px
+$font-size-basic = 28px
+$font-size-large = 42px
+$font-size-mid = 36px
+$font-size-small = 21px
 
 grid(96%, $gutter, s)
 
 space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
 
-font-sizes($font-size-basic, font-size-extra, $font-size-large, $font-size-mid, $font-size-small, $font-size-tiny, $font-size-micro)
+font-sizes($font-size-basic, false, $font-size-large, $font-size-mid, $font-size-small)
 
 @import 'responsive/mobile'
 
@@ -87,15 +146,11 @@ font-sizes($font-size-basic, font-size-extra, $font-size-large, $font-size-mid, 
   $margin-basic = ($gutter * 2)
   $margin-mid = ($gutter * 3.5)
   $margin-large = ($gutter * 5)
-  
-  $font-size-basic = 14px
-  
+    
   space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
   
   grid(680px, $gutter, m)
-  
-  font-size($font-size-basic)
-  
+    
   .mobile-only
     display: none !important
   
@@ -117,9 +172,7 @@ font-sizes($font-size-basic, font-size-extra, $font-size-large, $font-size-mid, 
   grid(1000px, $gutter, l)
   
   space-maker($margin-micro, $margin-tiny, $margin-small, $margin-basic, $margin-mid, $margin-large)
-  
-  font-size($font-size-basic)
-  
+    
   .desktop-only
     display: initial !important
 
